@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Possum Classifier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+    <style>
+		label {
+		  display: block;
+		}
+       body {
+        font-family: 'Heebo Light', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+        <h1>Possum Gender classifier</h1>
+        <h2>Enter the possums data: </h2>
+        <form id="measurement-form"action="{{ url_for('predict')}}"method="post">
+			<label for="age">Age:</label>
+			<input type="text" id="age" name="feature"><br><br>
+
+			<label for="head-length">Head Length:</label>
+			<input type="text" id="head-length" name="feature"><br><br>
+
+			<label for="skull-width">Skull Width:</label>
+			<input type="text" id="skull-width" name="feature"><br><br>
+
+			<label for="total-length">Total Length:</label>
+			<input type="text" id="total-length" name="feature"><br><br>
+
+			<label for="tail-length">Tail Length:</label>
+			<input type="text" id="tail-length" name="feature"><br><br>
+
+			<label for="foot-length">Foot Length:</label>
+			<input type="text" id="foot-length" name="feature"><br><br>
+
+			<label for="ear-conch">Ear Conch:</label>
+			<input type="text" id="ear-conch" name="feature"><br><br>
+
+			<label for="eye-distance">Eye Distance:</label>
+			<input type="text" id="eye-distance" name="feature"><br><br>
+
+			<label for="chest-girth">Chest Girth:</label>
+			<input type="text" id="chest-girth" name="feature"><br><br>
+
+			<label for="belly-girth">Belly Girth:</label>
+			<input type="text" id="belly-girth" name="feature"><br><br>
+			<button type="submit" class="btn btn-primary px-5" ">calculate risk</button>		  
+		</form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+  </body>
+</html>
